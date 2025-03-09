@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+.pageBg {
+  background: #fffab6;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.boneco {
+  height: 70%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttonHub {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  bottom: 30px;
+  flex-wrap: wrap;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.descHub {
+  /* width: 100%; */
+  background: #64646486;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.messageLayout {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  white-space: pre-line;
+  font-size: 35px;
+  max-width: 80%;
+  background: #fff;
+  border-radius: 6px;
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  padding: 40px;
+  gap: 10px;
+  box-shadow: 0px 2px 5px #0000002b;
 }
 
-.App-link {
-  color: #61dafb;
+.messageLayout div {
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
+.messageLayout div::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black; /* Change color as needed */
+  transition: width 0.4s ease-in-out;
+}
+
+.messageLayout div:hover::after {
+  width: 100%;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: scale(0.9);
   }
+  
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.buttonHub button {
+  font-size: 40px;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .messageLayout {
+    font-size: 17px;
+    width: 80%;
+    padding: 20px;
+  }
+  
+  .buttonHub {
+    gap: 10px;
+  }
+
+  .buttonHub button {
+    font-size: 15px;
   }
 }
