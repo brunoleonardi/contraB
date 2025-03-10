@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import Boneco from "./assets/boneco.png";
+import BonecoNormal from "./assets/bonecoNormal.png";
 import "./App.css";
 import Question1 from "./pages/question1";
 import FinalMessage from "./pages/finalMessage";
@@ -11,8 +12,24 @@ import Question4 from "./pages/question4";
 import Question5 from "./pages/question5";
 
 export const Menino = ({ className }) => {
-  return <img className={`boneco ${className}`} src={Boneco} alt="Menino" />;
+  const [selectedImage, setSelectedImage] = useState(Boneco);
+  const [animationClass, setAnimationClass] = useState(""); 
+
+  useEffect(() => {
+    setAnimationClass("slide-in");
+
+    const randomImage = Math.random() < 0.5 ? Boneco : BonecoNormal;
+    
+    const timeout = setTimeout(() => {
+      setSelectedImage(randomImage);
+    }, 50); 
+
+    return () => clearTimeout(timeout); 
+  }, []); 
+
+  return <img className={`boneco ${className} ${animationClass}`} src={selectedImage} alt="Menino" />;
 };
+
 
 
 function App() {
