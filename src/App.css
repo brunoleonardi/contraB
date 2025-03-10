@@ -16,6 +16,7 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
+  width: unset;
   height: 70%;
 }
 
@@ -132,7 +133,8 @@
 
   .boneco {
     left: unset;
-    height: 60%;
+    width: 100%;
+    height: unset;
   }
 
   .messageLayout {
