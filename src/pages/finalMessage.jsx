@@ -14,10 +14,6 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
         } else {
             setMessage(" Você demonstra empatia em algumas situações, mas pode acabar reforçando certos comportamentos sem perceber. O importante é refletir sobre o impacto de cada atitude. Todos nós podemos evoluir e tornar nossas relações mais saudáveis e respeitosas!");
         }
-
-        console.log('ruim', ruim)
-        console.log('neutro', neutro)
-        console.log('bom', bom)
     }, [ruim, neutro, bom]);
 
     return (

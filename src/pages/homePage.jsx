@@ -28,11 +28,11 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="messageLayout">
+            <div className="messageLayout slide-in">
                 {message}
             </div>
-            <Menino />
-            <div className="buttonHub">
+            <Menino className="slide-in" />
+            <div className="buttonHub slide-in">
                 <Button sx={{fontSize: '20px'}} onClick={handleButton} color="info" variant="contained">{buttonText}</Button>
             </div>
         </>

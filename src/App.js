@@ -10,9 +10,10 @@ import Question3 from "./pages/question3";
 import Question4 from "./pages/question4";
 import Question5 from "./pages/question5";
 
-export const Menino = () => {
-  return <img className="boneco" src={Boneco} />;
+export const Menino = ({ className }) => {
+  return <img className={`boneco ${className}`} src={Boneco} alt="Menino" />;
 };
+
 
 function App() {
   const navigate = useNavigate();
