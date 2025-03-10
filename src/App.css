@@ -115,6 +115,10 @@
 }
 
 @media (max-width: 768px) {
+  .boneco {
+    height: 60%;
+  }
+  
   .messageLayout {
     font-size: 17px;
     width: 80%;
