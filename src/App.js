@@ -11,23 +11,23 @@ import Question3 from "./pages/question3";
 import Question4 from "./pages/question4";
 import Question5 from "./pages/question5";
 
-export const Menino = ({ className }) => {
+export const Menino = ({ className, image }) => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [animationClass, setAnimationClass] = useState(""); 
+  const [animationClass, setAnimationClass] = useState("");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       const randomImage = Math.random() < 0.5 ? Boneco : BonecoNormal;
       setSelectedImage(randomImage);
-      setAnimationClass("slide-in"); 
-    }, 50); 
+      setAnimationClass("slide-in");
+    }, 50);
 
     return () => clearTimeout(timeout);
-  }, []); 
+  }, []);
 
   if (!selectedImage) return null;
 
-  return <img className={`boneco ${className} ${animationClass}`} src={selectedImage} alt="Menino" />;
+  return <img className={`boneco ${className} ${animationClass}`} src={image ? image : selectedImage} alt="Menino" />;
 };
 
 
@@ -36,17 +36,17 @@ function App() {
   const [ruim, setRuim] = useState(0);
   const [neutro, setNeutro] = useState(0);
   const [bom, setBom] = useState(0);
-  const [animate, setAnimate] = useState(false); 
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     navigate("/");
   }, []);
 
   useEffect(() => {
-    setAnimate(true); 
-    const timeout = setTimeout(() => setAnimate(false), 500); 
+    setAnimate(true);
+    const timeout = setTimeout(() => setAnimate(false), 500);
     return () => clearTimeout(timeout);
-  }, [ruim, neutro, bom]); 
+  }, [ruim, neutro, bom]);
 
   return (
     <div className="pageBg">
