@@ -129,12 +129,13 @@
 @media (max-width: 1100px) {
   .pageBg {
     background-position: unset;
+    align-items: end;
   }
 
   .boneco {
+    position: relative;
     left: unset;
-    width: 100%;
-    height: unset;
+    height: 60%;
   }
 
   .messageLayout {
