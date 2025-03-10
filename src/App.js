@@ -12,24 +12,23 @@ import Question4 from "./pages/question4";
 import Question5 from "./pages/question5";
 
 export const Menino = ({ className }) => {
-  const [selectedImage, setSelectedImage] = useState(Boneco);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [animationClass, setAnimationClass] = useState(""); 
 
   useEffect(() => {
-    setAnimationClass("slide-in");
-
-    const randomImage = Math.random() < 0.5 ? Boneco : BonecoNormal;
-    
     const timeout = setTimeout(() => {
+      const randomImage = Math.random() < 0.5 ? Boneco : BonecoNormal;
       setSelectedImage(randomImage);
+      setAnimationClass("slide-in"); 
     }, 50); 
 
-    return () => clearTimeout(timeout); 
+    return () => clearTimeout(timeout);
   }, []); 
+
+  if (!selectedImage) return null;
 
   return <img className={`boneco ${className} ${animationClass}`} src={selectedImage} alt="Menino" />;
 };
-
 
 
 function App() {

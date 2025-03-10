@@ -4,7 +4,8 @@ import { Menino } from "../App";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-    const [message, setMessage] = useState('Oi sou Enzo. Que bom te ver por aqui! Eu adoro observar como as pessoas lidam com diferentes situações no dia a dia.')
+    //   
+    const [message, setMessage] = useState('E aí, que bom te ver por aqui! Já parou pra pensar em como a gente manda ver (ou dá aquela vacilada) quando rola uma zoeira que passa do ponto?')
     const [buttonText, setButtonText] = useState('Avançar')
     const [counter, setCounter] = useState(0)
     const navigate = useNavigate()
@@ -13,11 +14,9 @@ const HomePage = () => {
     const handleButton = () => {
         setCounter(counter + 1)
         if (counter === 0) {
-            setMessage('Já parou para pensar em como reagimos quando alguém faz uma brincadeira que pode passar do limite? Ou como nos sentimos quando estamos em um grupo novo?')
+            setMessage('Ou quando chegamos num grupo novo e bate aquele misto de ansiedade e empolgação?')
         } else if (counter === 1) {
-            setMessage('Hoje, quero testar seu jeito de lidar com algumas situações comuns na escola. Você topa? É só responder o que faria em cada caso.')
-        } else {
-            setMessage('No final, vou te contar um pouco mais sobre o seu estilo de convivência! Bora lá? 🚀')
+            setMessage('Bora trocar uma ideia e ver como você lida com essas situações no dia a dia!')
             setButtonText('Bora!')
         }
 

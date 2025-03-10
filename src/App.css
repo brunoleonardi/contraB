@@ -5,7 +5,7 @@
   background-position: center;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -13,17 +13,21 @@
 
 .boneco {
   /* filter: drop-shadow(0px 0px 1px #000000); */
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   height: 70%;
 }
 
 .buttonHub {
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 80px;
-  bottom: 30px;
+  bottom: 200px;
+  right: 100px;
   flex-wrap: wrap;
 }
 
@@ -47,12 +51,14 @@
   flex-direction: column;
   white-space: pre-line;
   font-size: 35px;
-  max-width: 80%;
+  max-width: 50%;
+  position: absolute;
+  right: 100px;
   background: #fff;
   border-radius: 6px;
   border-radius: 20px;
-  position: absolute;
-  top: 20px;
+  /* position: absolute; */
+  /* top: 20px; */
   padding: 40px;
   gap: 10px;
   box-shadow: 0px 2px 5px #0000002b;
@@ -115,27 +121,34 @@
 }
 
 .buttonHub button {
-  font-size: 40px;
+  font-size: 30px;
   border-radius: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .pageBg {
     background-position: unset;
   }
 
   .boneco {
+    left: unset;
     height: 60%;
   }
 
   .messageLayout {
+    position: absolute;
+    top: 20px;
+    right: unset;
     font-size: 17px;
-    width: 80%;
+    max-width: 80%;
     padding: 20px;
   }
 
   .buttonHub {
     gap: 10px;
+    bottom: 30px;
+    right: unset;
+    width: 100%;
   }
 
   .buttonHub button {
