@@ -61,16 +61,13 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
                     </>
                 )}
                 {counter === 3 && (
-                    <>
-                        <p style={{ fontSize: '12px' }}>
-                            UNIDADE CURRICULAR DE EXTENSÃO:
-                            Prevenção e Combate ao Bullying
-                        </p>
-                        <p style={{ fontSize: '12px', marginTop: '-15px' }}>
-                            PRODUZIDO POR ALUNOS DA UNIVERSIDADE NOVE DE JULHO – PSICOLOGIA:
-                            Alane, Alessandra, Brenda, Dani, Herivelto, Igor, Luis, Renata e Thales.
-                        </p>
-                    </>
+                    <div className="university">
+                        UNIDADE CURRICULAR DE EXTENSÃO:
+                        Prevenção e Combate ao Bullying
+                        <br />
+                        PRODUZIDO POR ALUNOS DA UNIVERSIDADE NOVE DE JULHO – PSICOLOGIA:
+                        Alane, Alessandra, Brenda, Dani, Herivelto, Igor, Luis, Renata e Thales.
+                    </div>
                 )}
             </div>
             {counter !== 3 && (

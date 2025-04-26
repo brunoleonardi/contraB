@@ -7,6 +7,10 @@
   font-style: normal;
 }
 
+.university{
+  font-size: 12px;
+}
+
 .tuffy-regular-italic {
   font-family: "Tuffy", sans-serif;
   font-size: 50px;
@@ -209,5 +213,9 @@
 
   .descHub {
     font-size: 16px;
+  }
+
+  .university{
+    font-size: 9px;
   }
 }
