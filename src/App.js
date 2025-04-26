@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import Boneco from "./assets/boneco.png";
 import BonecoNormal from "./assets/bonecoNormal.png";
@@ -10,6 +10,7 @@ import Question2 from "./pages/question2";
 import Question3 from "./pages/question3";
 import Question4 from "./pages/question4";
 import Question5 from "./pages/question5";
+import TabelaRespostas from "./pages/respostas";
 
 export const Menino = ({ className, image }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -33,13 +34,16 @@ export const Menino = ({ className, image }) => {
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation(); // PEGA A ROTA ATUAL
   const [ruim, setRuim] = useState(0);
   const [neutro, setNeutro] = useState(0);
   const [bom, setBom] = useState(0);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    navigate("/");
+    if (location.pathname !== "/respostas") {
+      navigate("/");
+    }
   }, []);
 
   useEffect(() => {
@@ -73,6 +77,7 @@ function App() {
           element={<Question5 ruim={ruim} setRuim={setRuim} neutro={neutro} setNeutro={setNeutro} bom={bom} setBom={setBom} animate={animate} />}
         />
         <Route path="/final" element={<FinalMessage ruim={ruim} neutro={neutro} bom={bom} animate={animate} />} />
+        <Route path="/respostas" element={<TabelaRespostas />} />
       </Routes>
     </div>
   );
