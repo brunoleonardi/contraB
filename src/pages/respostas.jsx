@@ -34,7 +34,7 @@ const TabelaRespostas = () => {
         <div className="respostas">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <div className="titleRespostas" style={{ fontSize: '24px', fontWeight: 'bold', height: '10px' }}>RESPOSTAS</div>
-                <div>
+                <div style={{marginTop: '15px'}}>
                     <IconButton style={{marginRight: '10px'}} onClick={() => getResponses()}>
                         <RefreshIcon />
                     </IconButton>
