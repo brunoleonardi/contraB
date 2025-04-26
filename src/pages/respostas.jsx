@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 
 const TabelaRespostas = () => {
-    const [dados, setDados] = useState();
+    const [dados, setDados] = useState([]);
 
     useEffect(() => {
         getResponses();
