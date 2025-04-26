@@ -7,8 +7,8 @@ const Question4 = ({ ruim, setRuim, neutro, setNeutro, bom, setBom, animate }) =
     const navigate = useNavigate();
     const [message] = useState(
         <>
-            <strong>Um colega novo na escola está tentando se enturmar, mas não sabe como. Como você o recebe?</strong>           
-            <div onClick={() => handleButton('A')}><strong>A:</strong> Eu nem ligo para ele, ele que se vire.</div>
+            <strong>Um colega novo na escola está tentando se enturmar, mas não sabe como. Como você o recebe?</strong>
+            <div onClick={() => handleButton('A')}><strong>A:</strong> Não me preocupo em ajudar, acho que ele deve tentar sozinho.</div>
             <div onClick={() => handleButton('B')}><strong>B:</strong> Tento ajudar ele a se enturmar, chamando ele para se juntar ao grupo.</div>
             <div onClick={() => handleButton('C')}><strong>C:</strong> Ignoro, talvez ele nem queira se juntar a nós.</div>
         </>

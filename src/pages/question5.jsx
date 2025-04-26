@@ -10,7 +10,7 @@ const Question5 = ({ ruim, setRuim, neutro, setNeutro, bom, setBom, animate }) =
             <strong>Você está vendo uma briga acontecendo entre dois colegas. O que você faz?</strong>
             <div onClick={() => handleButton('A')}><strong>A:</strong> Fico assistindo, não quero me envolver.</div>
             <div onClick={() => handleButton('B')}><strong>B:</strong> Chamo algum adulto para resolver a situação.</div>
-            <div onClick={() => handleButton('C')}><strong>C:</strong> Incentivo a briga para ver no que vai dar.</div>
+            <div onClick={() => handleButton('C')}><strong>C:</strong> Incentivo a briga, mesmo sabendo que isso pode machucar alguém.</div>
         </>
     );
 

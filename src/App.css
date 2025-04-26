@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.lastFont {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .pageBg {
   background: linear-gradient(to right, #5bbadc, #1e78b4);
   background-image: url(./assets/background.png);
@@ -34,6 +42,7 @@
 
 .descHub {
   /* width: 100%; */
+  /* background: #ff4545; */
   background: #64646486;
   position: absolute;
   display: flex;
