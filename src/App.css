@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tuffy:ital@1&display=swap');
 
 .lastFont {
   font-family: "Cal Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
+
+.tuffy-regular-italic {
+  font-family: "Tuffy", sans-serif;
+  font-size: 50px;
+  line-height: 40px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  text-shadow:
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000,
+    -3px 0px 0 #000,
+    3px 0px 0 #000,
+    0px -3px 0 #000,
+    0px 3px 0 #000;
+  text-align: center;
+  position: absolute;
+  top: -120px;
+}
+
 
 .pageBg {
   background: linear-gradient(to right, #5bbadc, #1e78b4);
@@ -74,6 +97,10 @@
   box-shadow: 0px 2px 5px #0000002b;
 }
 
+.messageLayout.center {
+  align-items: center;
+}
+
 .messageLayout div {
   cursor: pointer;
   transition: 0.4s;
@@ -136,6 +163,11 @@
 }
 
 @media (max-width: 1100px) {
+  .tuffy-regular-italic {
+    font-size: 30px;
+    top: -120px;
+  }
+
   .pageBg {
     background-position: unset;
     align-items: end;
@@ -154,6 +186,10 @@
     font-size: 17px;
     max-width: 80%;
     padding: 20px;
+  }
+
+  .messageLayout.center {
+    top: 105px;
   }
 
   .buttonHub {

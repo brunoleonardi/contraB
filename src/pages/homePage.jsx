@@ -27,11 +27,12 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="messageLayout slide-in">
+            <div className="messageLayout center slide-in">
+                <p className="tuffy-regular-italic">JUNTOS CONTRA O BULLYING!</p>
                 {message}
-            {/* <div className="buttonHub slide-in"> */}
-                <Button sx={{fontSize: '20px', mt: 4}} onClick={handleButton} color="info" variant="contained">{buttonText}</Button>
-            {/* </div> */}
+                {/* <div className="buttonHub slide-in"> */}
+                <Button sx={{ fontSize: '20px', mt: 4, width: '100%' }} onClick={handleButton} color="info" variant="contained">{buttonText}</Button>
+                {/* </div> */}
             </div>
             <Menino className="slide-in" />
         </>
