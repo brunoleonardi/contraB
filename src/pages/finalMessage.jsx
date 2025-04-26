@@ -27,7 +27,25 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             setImage(BonecoBom);
             setMessage("Você demonstra empatia em algumas situações, mas pode acabar reforçando certos comportamentos sem perceber. O importante é refletir sobre o impacto de cada atitude. Todos nós podemos evoluir e tornar nossas relações mais saudáveis e respeitosas!");
         }
+        sendResponses(ruim, neutro, bom);
     }, [ruim, neutro, bom]);
+
+    const sendResponses = async (ruim, neutro, bom) => {
+        try {
+            const response = await fetch('/api/saveResponses', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ruim, neutro, bom }),
+            });
+
+            const data = await response.json();
+            console.log('Exito ao enviar respostas', data.message);
+        } catch (error) {
+            console.error('Erro ao enviar respostas:', error);
+        }
+    };
 
     const handleButton = () => {
         setCounter(counter + 1);
