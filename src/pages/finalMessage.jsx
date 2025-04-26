@@ -54,12 +54,28 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             <div className={`messageLayout slide-in ${classname}`} style={style}>
                 {message}
                 {counter !== 3 && (
-                    <Button sx={{ fontSize: '20px', mt: 4 }} onClick={handleButton} color="info" variant="contained">
-                        {buttonText}
-                    </Button>
+                    <>
+                        <Button sx={{ fontSize: '20px', mt: 4 }} onClick={handleButton} color="info" variant="contained">
+                            {buttonText}
+                        </Button>
+                    </>
+                )}
+                {counter === 3 && (
+                    <>
+                        <p style={{ fontSize: '12px' }}>
+                            UNIDADE CURRICULAR DE EXTENSÃO:
+                            Prevenção e Combate ao Bullying
+                        </p>
+                        <p style={{ fontSize: '12px', marginTop: '-15px' }}>
+                            PRODUZIDO POR ALUNOS DA UNIVERSIDADE NOVE DE JULHO – PSICOLOGIA:
+                            Alane, Alessandra, Brenda, Dani, Herivelto, Igor, Luis, Renata e Thales.
+                        </p>
+                    </>
                 )}
             </div>
-            <Menino image={image} className="slide-in" />
+            {counter !== 3 && (
+                <Menino image={image} className="slide-in" />
+            )}
         </>
     );
 };
