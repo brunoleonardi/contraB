@@ -30,48 +30,50 @@ const TabelaRespostas = () => {
     const totalBom = dados.reduce((acc, curr) => acc + (curr.bom || 0), 0);
 
     return (
-        <div className="respostas">
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <div className="titleRespostas">RESPOSTAS</div>
-
+        <div className="respostas" style={{ padding: "20px" }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap' }}>
+                <div className="titleRespostas" style={{ fontSize: '24px', fontWeight: 'bold' }}>RESPOSTAS</div>
                 <Button
                     variant="contained"
                     color="error"
                     onClick={limparRespostas}
-                    style={{ marginBottom: "20px", height: '50px' }}
+                    sx={{ height: '50px', marginTop: { xs: 2, sm: 0 } }}
                 >
                     Limpar Respostas
                 </Button>
             </div>
 
-            <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell><strong>Data/Hora</strong></TableCell>
-                            <TableCell><strong>Ruim</strong></TableCell>
-                            <TableCell><strong>Neutro</strong></TableCell>
-                            <TableCell><strong>Bom</strong></TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {dados?.slice().reverse().map((linha) => (
-                            <TableRow key={linha._id}>
-                                <TableCell>{new Date(linha.timestamp).toLocaleString()}</TableCell>
-                                <TableCell>{linha.ruim}</TableCell>
-                                <TableCell>{linha.neutro}</TableCell>
-                                <TableCell>{linha.bom}</TableCell>
+            {/* Faz a tabela ser scrollável no mobile */}
+            <div style={{ overflowX: "auto" }}>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell><strong>Data/Hora</strong></TableCell>
+                                <TableCell><strong>Ruim</strong></TableCell>
+                                <TableCell><strong>Neutro</strong></TableCell>
+                                <TableCell><strong>Bom</strong></TableCell>
                             </TableRow>
-                        ))}
-                        <TableRow style={{ backgroundColor: "#fff" }}>
-                            <TableCell><strong>Total</strong></TableCell>
-                            <TableCell><strong>{totalRuim}</strong></TableCell>
-                            <TableCell><strong>{totalNeutro}</strong></TableCell>
-                            <TableCell><strong>{totalBom}</strong></TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                        </TableHead>
+                        <TableBody>
+                            {dados?.slice().reverse().map((linha) => (
+                                <TableRow key={linha._id}>
+                                    <TableCell>{new Date(linha.timestamp).toLocaleString()}</TableCell>
+                                    <TableCell>{linha.ruim}</TableCell>
+                                    <TableCell>{linha.neutro}</TableCell>
+                                    <TableCell>{linha.bom}</TableCell>
+                                </TableRow>
+                            ))}
+                            <TableRow style={{ backgroundColor: "#fff" }}>
+                                <TableCell><strong>Total</strong></TableCell>
+                                <TableCell><strong>{totalRuim}</strong></TableCell>
+                                <TableCell><strong>{totalNeutro}</strong></TableCell>
+                                <TableCell><strong>{totalBom}</strong></TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
         </div>
     );
 };
