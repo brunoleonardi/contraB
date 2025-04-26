@@ -106,37 +106,34 @@ const TabelaRespostas = () => {
                 </Button>
             </div>
 
-            {/* Scroll só horizontal */}
-            <div className="table-scroll">
-                <TableContainer component={Paper}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell><strong>Data/Hora</strong></TableCell>
-                                <TableCell><strong>Ruim</strong></TableCell>
-                                <TableCell><strong>Neutro</strong></TableCell>
-                                <TableCell><strong>Bom</strong></TableCell>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell><strong>Data/Hora</strong></TableCell>
+                            <TableCell><strong>Ruim</strong></TableCell>
+                            <TableCell><strong>Neutro</strong></TableCell>
+                            <TableCell><strong>Bom</strong></TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {dados?.slice().reverse().map((linha) => (
+                            <TableRow key={linha._id}>
+                                <TableCell>{new Date(linha.timestamp).toLocaleString()}</TableCell>
+                                <TableCell>{linha.ruim}</TableCell>
+                                <TableCell>{linha.neutro}</TableCell>
+                                <TableCell>{linha.bom}</TableCell>
                             </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {dados?.slice().reverse().map((linha) => (
-                                <TableRow key={linha._id}>
-                                    <TableCell>{new Date(linha.timestamp).toLocaleString()}</TableCell>
-                                    <TableCell>{linha.ruim}</TableCell>
-                                    <TableCell>{linha.neutro}</TableCell>
-                                    <TableCell>{linha.bom}</TableCell>
-                                </TableRow>
-                            ))}
-                            <TableRow style={{ backgroundColor: "#fff" }}>
-                                <TableCell><strong>Total</strong></TableCell>
-                                <TableCell><strong>{totalRuim}</strong></TableCell>
-                                <TableCell><strong>{totalNeutro}</strong></TableCell>
-                                <TableCell><strong>{totalBom}</strong></TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div>
+                        ))}
+                        <TableRow style={{ backgroundColor: "#fff" }}>
+                            <TableCell><strong>Total</strong></TableCell>
+                            <TableCell><strong>{totalRuim}</strong></TableCell>
+                            <TableCell><strong>{totalNeutro}</strong></TableCell>
+                            <TableCell><strong>{totalBom}</strong></TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </div>
     );
 };
