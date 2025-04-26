@@ -28,6 +28,7 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             setMessage("Você demonstra empatia em algumas situações, mas pode acabar reforçando certos comportamentos sem perceber. O importante é refletir sobre o impacto de cada atitude. Todos nós podemos evoluir e tornar nossas relações mais saudáveis e respeitosas!");
         }
         sendResponses(ruim, neutro, bom);
+        getResponses();
     }, [ruim, neutro, bom]);
 
     const sendResponses = async (ruim, neutro, bom) => {
@@ -46,6 +47,13 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             console.error('Erro ao enviar respostas:', error);
         }
     };
+
+    const getResponses = async () => {
+        const res = await fetch('/api/getResponses');
+        const data = await res.json();
+        console.log(data); // Aqui você vê todos os registros no console
+      };
+      
 
     const handleButton = () => {
         setCounter(counter + 1);
