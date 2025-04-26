@@ -37,7 +37,7 @@ const TabelaRespostas = () => {
                     variant="contained"
                     color="error"
                     onClick={limparRespostas}
-                    sx={{ height: '50px', marginTop: { xs: 2, sm: 0 } }}
+                    sx={{ height: '40px', marginTop: { xs: 2, sm: 0 } }}
                 >
                     Limpar Respostas
                 </Button>
