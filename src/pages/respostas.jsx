@@ -36,7 +36,7 @@ const TabelaRespostas = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {dados.reverse.map((linha) => (
+                        {dados.reverse().map((linha) => (
                             <TableRow key={linha._id}>
                                 <TableCell>{new Date(linha.timestamp).toLocaleString()}</TableCell>
                                 <TableCell>{linha.ruim}</TableCell>
