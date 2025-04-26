@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-.university{
+.university {
   font-size: 12px;
 }
 
@@ -17,21 +17,28 @@
   line-height: 40px;
   font-weight: bold;
   font-style: italic;
-  color: #000;
-  text-shadow:
-    -3px -3px 0 #fff,
-    3px -3px 0 #fff,
-    -3px 3px 0 #fff,
-    3px 3px 0 #fff,
-    -3px 0px 0 #fff,
-    3px 0px 0 #fff,
-    0px -3px 0 #fff,
-    0px 3px 0 #fff;
+  color: #fff;
   text-align: center;
   position: absolute;
   top: -120px;
+  text-shadow:
+    -3px -3px 0 #252b45,
+    3px -3px 0 #252b45,
+    -3px 3px 0 #252b45,
+    3px 3px 0 #252b45,
+    -3px 0px 0 #252b45,
+    3px 0px 0 #252b45,
+    0px -3px 0 #252b45,
+    0px 3px 0 #252b45,
+    -4px -4px 0 #252b45,
+    4px -4px 0 #252b45,
+    -4px 4px 0 #252b45,
+    4px 4px 0 #252b45,
+    -4px 0px 0 #252b45,
+    4px 0px 0 #252b45,
+    0px -4px 0 #252b45,
+    0px 4px 0 #252b45;
 }
-
 
 .pageBg {
   background: linear-gradient(to right, #5bbadc, #1e78b4);
@@ -215,7 +222,7 @@
     font-size: 16px;
   }
 
-  .university{
+  .university {
     font-size: 9px;
   }
 }
