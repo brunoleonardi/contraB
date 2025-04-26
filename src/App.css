@@ -52,7 +52,7 @@
 }
 
 .titleRespostas {
-  padding: 50px 0px;
+  padding: 20px 0px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -241,9 +241,5 @@
 
   .university {
     font-size: 9px;
-  }
-
-  .titleRespostas {
-    padding: 20px 0px;
   }
 }

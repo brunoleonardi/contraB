@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
-    Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button
+    Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, IconButton
 } from "@mui/material";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const TabelaRespostas = () => {
     const [dados, setDados] = useState([]);
@@ -32,14 +34,14 @@ const TabelaRespostas = () => {
         <div className="respostas">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <div className="titleRespostas" style={{ fontSize: '24px', fontWeight: 'bold', height: '10px' }}>RESPOSTAS</div>
-                <Button
-                    variant="contained"
-                    color="error"
-                    onClick={limparRespostas}
-                    sx={{ height: '40px', marginTop: { xs: 2, sm: 0 } }}
-                >
-                    Limpar Respostas
-                </Button>
+                <div>
+                    <IconButton style={{marginRight: '10px'}} onClick={() => getResponses()}>
+                        <RefreshIcon />
+                    </IconButton>
+                    <IconButton color="error" onClick={() => limparRespostas()}>
+                        <DeleteOutlineIcon />
+                    </IconButton>
+                </div>
             </div>
 
             <TableContainer component={Paper}>
