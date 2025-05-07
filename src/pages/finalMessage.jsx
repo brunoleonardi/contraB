@@ -46,7 +46,7 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             console.error('Erro ao enviar respostas:', error);
         }
     };
-      
+
 
     const handleButton = () => {
         setCounter(counter + 1);
@@ -56,8 +56,8 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
             Falar com alguém de confiança — como seus pais, um professor ou um amigo — pode ser o primeiro passo para mudar tudo.`);
         } else if (counter === 1) {
             setClassname('')
-            setMessage(`Não deixe o bullying calar sua voz. Você merece ser respeitado e apoiado!
-            Não tenha medo de pedir ajuda. Sua coragem pode transformar sua história!`);
+            setMessage(`O bullying não precisa silenciar sua voz. Você merece ser respeitado e apoiado!
+            Não precisamos ter medo de pedir ajuda. Sua coragem pode transformar sua história!`);
         } else if (counter === 2) {
             setClassname('lastFont')
             setStyle({ background: '#000', color: '#fff' })
@@ -79,7 +79,7 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
                         </Button>
                     </>
                 )}
-                {counter === 3 && (
+                {/* {counter === 3 && (
                     <div className="university">
                         UNIDADE CURRICULAR DE EXTENSÃO:
                         Prevenção e Combate ao Bullying
@@ -87,7 +87,7 @@ const FinalMessage = ({ ruim, neutro, bom }) => {
                         PRODUZIDO POR ALUNOS DA UNIVERSIDADE NOVE DE JULHO – PSICOLOGIA:
                         Alane, Alessandra, Brenda, Dani, Herivelto, Igor, Luis, Renata e Thales.
                     </div>
-                )}
+                )} */}
             </div>
             {counter !== 3 && (
                 <Menino image={image} className="slide-in" />
